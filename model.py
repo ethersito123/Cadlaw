@@ -56,22 +56,22 @@ class ModelArgs:
     dtype: Literal["bf16", "fp8"] = "bf16"
     vocab_size: int = 102400
     dim: int = 2048
-    inter_dim: int = 10944
-    moe_inter_dim: int = 1408
-    n_layers: int = 27
+    inter_dim: int = 4096
+    moe_inter_dim: int = 10000
+    n_layers: int = 24
     n_dense_layers: int = 1
     n_heads: int = 16
     # moe
-    n_routed_experts: int = 64
-    n_shared_experts: int = 2
-    n_activated_experts: int = 6
+    n_routed_experts: int = 8
+    n_shared_experts: int = 1
+    n_activated_experts: int = 2
     n_expert_groups: int = 1
     n_limited_groups: int = 1
     score_func: Literal["softmax", "sigmoid"] = "softmax"
     route_scale: float = 1.
     # mla
     q_lora_rank: int = 0
-    kv_lora_rank: int = 512
+    kv_lora_rank: int = 256
     qk_nope_head_dim: int = 128
     qk_rope_head_dim: int = 64
     v_head_dim: int = 128
@@ -82,7 +82,7 @@ class ModelArgs:
     beta_fast: int = 32
     beta_slow: int = 1
     mscale: float = 1.
-    model_name: str = "Odra"
+    model_name: str = "Cadlaw"
 
 
 class ParallelEmbedding(nn.Module):
